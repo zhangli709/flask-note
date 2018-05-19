@@ -1,0 +1,14 @@
+{% extends 'base_main.html' %}
+
+{% block title %}通过班级找学生{% endblock %}
+
+
+{% block content %}
+        班级：{{ grade }}<br>
+    {% for stu in stus %}
+        id:{{ stu.s_id }}
+        name:{{ stu.s_name }}
+        age:{{ stu.s_age }}
+        <br>
+    {% endfor %}
+{% endblock %}

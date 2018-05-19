@@ -1,0 +1,16 @@
+
+
+{% extends 'base.html' %}
+
+{% block extCSS %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css') }}">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+{% endblock %}
+
+{% block header %}
+    <p>我是base_main里添加的内容</p>
+{% endblock %}
+
+{% block extJS %}
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+{% endblock %}

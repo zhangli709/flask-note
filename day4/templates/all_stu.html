@@ -1,0 +1,18 @@
+{% extends 'base_main.html' %}
+
+{% block title %}
+    学生选课信息展示
+{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for stu in stus %}
+            <li>
+                id:{{ stu.s_id }}
+                姓名：{{ stu.s_name }}
+                <a href="/stu/selectcoubystu/{{ stu.s_id }}/">课程</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

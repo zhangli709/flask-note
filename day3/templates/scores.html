@@ -1,0 +1,51 @@
+{% extends 'base_main.html' %}
+
+{% block title %}
+    分数页面
+{% endblock %}
+
+{% block header %}
+    <ul>
+    {% for score in scores %}
+
+        {% if loop.first %}
+            <li style="color: red">{{ loop.revindex }}:{{ loop.index }} {{ score }}</li>
+        {% elif loop.last %}
+            <li style="color: goldenrod">{{ loop.revindex }}:{{ loop.index }} {{ score }}</li>
+        {% else %}
+            <li>{{ loop.revindex }}:{{ loop.index }} {{ score }}</li>
+        {% endif %}
+
+    {% endfor %}
+    </ul>
+    <hr>
+    <ul>
+        <li>{{ content_h2 }}</li>
+{#        渲染样式#}
+        <li>{{ content_h2 | safe }}</li>
+{#        消除样式#}
+        <li>{{ content_h2 | striptags }}</li>
+
+        <li>{{ content_h3 }}</li>
+        <li>{{ content_h3 | length }}</li>
+        <li>{{ content_h3 | trim | length }}</li>
+
+    </ul>
+    <hr>
+
+    <ur>
+        {% for i in config %}
+        <li>{{ i | first }}, {{ i | last }}</li>
+        {% endfor %}
+    </ur>
+
+{% from 'function.html' import show_goods %}
+    {% from 'function.html' import say %}
+
+    {{ show_goods('唯一', '1') }}
+    <br>
+    {{ show_goods('兵工厂', '2') }}
+    <br>
+    {{ say('郑欢欢') }}
+
+{% endblock %}

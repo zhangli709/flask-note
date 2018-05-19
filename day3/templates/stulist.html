@@ -1,0 +1,17 @@
+{% extends 'base_main.html' %}
+
+{% block title %}
+    学生列表
+{% endblock %}
+
+{% block content %}
+    {% from 'function.html' import show_stus %}
+    <ul>
+        {% for stu in stus %}
+{#            <li>学生id：{{ stu.s_id }}</li>#}
+{#            <li>学生姓名：{{ stu.s_name }}</li>#}
+{#            <li>学生年龄：{{ stu.s_age }}</li>#}
+            <li>{{ show_stus(stu.s_id, stu.s_name, stu.s_age) }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

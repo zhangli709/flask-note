@@ -1,0 +1,19 @@
+{% extends 'base_main.html' %}
+
+{% block title %}
+    对应学生课程信息展示
+{% endblock %}
+
+{% block content %}
+    <ul>
+        学生姓名：{{ stu.s_name }}
+        {% for cou in cous %}
+            <li>
+                id:{{ cou.c_id }}
+                课程名：{{ cou.c_name }}
+                <a href="/stu/deletecoubystu/{{ stu.s_id }}/{{ cou.c_id }}/">删除</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

@@ -1,0 +1,52 @@
+{% extends 'base_main.html' %}
+
+{% block extCSS %}
+    <link rel="stylesheet" href="/static/css/home.css">
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+        <h3>学生信息：</h3>
+        <br>
+        <select name="student" id="">
+            <option value="">请选择学生信息</option>
+                {% for stu in stus %}
+                    <option value="{{ stu.s_id }}">{{ stu.s_name }}</option>
+                {% endfor %}
+        </select>
+
+        <h3> 课程信息：</h3>
+        <br>
+        <select name="course" id="">
+            <option value="">请选择课程信息</option>
+                {% for cou in cous %}
+                    <option value="{{ cou.c_id }}">{{ cou.c_name }}</option>
+                {% endfor %}
+        </select>
+
+
+        <br>
+        <select name="course" id="">
+            <option value="">请选择课程信息</option>
+                {% for cou in cous %}
+                    <option value="{{ cou.c_id }}">{{ cou.c_name }}</option>
+                {% endfor %}
+        </select>
+    <br>
+        <select name="course" id="">
+            <option value="">请选择课程信息</option>
+                {% for cou in cous %}
+                    <option value="{{ cou.c_id }}">{{ cou.c_name }}</option>
+                {% endfor %}
+        </select>
+    <br>
+        <select name="course" id="">
+            <option value="">请选择课程信息</option>
+                {% for cou in cous %}
+                    <option value="{{ cou.c_id }}">{{ cou.c_name }}</option>
+                {% endfor %}
+        </select>
+
+        <input type="submit" value="提交">
+    </form>
+{% endblock %}
